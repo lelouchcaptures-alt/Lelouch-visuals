@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lelouch Visual — Photography</title>
+<meta name="description" content="Lelouch Visual — documentary event, street, motion, detail and still photography.">
+<style>
+:root{
+  --bg:#0a0a0a; --surface:#111; --text:#f4f1eb; --muted:#a6a29b;
+  --line:#272727; --accent:#d9c7a0; --max:1280px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:10;padding:22px 0;background:linear-gradient(#080808cc,transparent);backdrop-filter:blur(5px)}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:18px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+nav{display:flex;gap:28px;font-size:12px;text-transform:uppercase;letter-spacing:.16em}
+nav a{opacity:.78;transition:.2s}nav a:hover{opacity:1;color:var(--accent)}
+.hero{min-height:100vh;display:grid;place-items:end;position:relative;overflow:hidden;padding:140px 0 70px;
+background:
+linear-gradient(90deg,#050505e8 0%,#05050588 42%,#05050522 100%),
+linear-gradient(0deg,#0a0a0a 0%,transparent 35%),
+radial-gradient(circle at 70% 40%,#5e5548 0,#24211d 23%,#101010 62%,#080808 100%)}
+.hero:after{content:"";position:absolute;inset:0;opacity:.14;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:4px 4px;pointer-events:none}
+.hero-content{position:relative;z-index:1;width:min(900px,100%)}
+.kicker{color:var(--accent);font-size:11px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(58px,11vw,150px);line-height:.86;letter-spacing:-.065em;text-transform:uppercase;max-width:1000px}
+.hero p{max-width:540px;color:#c2beb7;margin-top:28px;font-size:16px}
+.cta{display:inline-flex;margin-top:30px;padding:14px 20px;border:1px solid #aaa18f;font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:.25s}
+.cta:hover{background:var(--text);color:#111}
+section{padding:120px 0;border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:1fr 2fr;gap:40px;margin-bottom:55px}
+.eyebrow{color:var(--accent);font-size:10px;letter-spacing:.25em;text-transform:uppercase}
+h2{font-size:clamp(40px,6vw,78px);line-height:.95;letter-spacing:-.05em;text-transform:uppercase}
+.about-copy{max-width:690px;color:#c3c0ba;font-size:clamp(20px,2.2vw,29px);line-height:1.35}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.card{background:var(--surface);min-height:360px;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;inset:0;background:
+linear-gradient(145deg,#3c3934,#151515 48%,#090909)}
+.card:nth-child(2):before{background:linear-gradient(145deg,#252525,#4b4338 45%,#0c0c0c)}
+.card:nth-child(3):before{background:linear-gradient(145deg,#0b0b0b,#34312c 50%,#151515)}
+.card:nth-child(4):before{background:linear-gradient(145deg,#48433b,#111 55%,#080808)}
+.card:nth-child(5):before{background:linear-gradient(145deg,#111,#4a4741 55%,#090909)}
+.card:nth-child(6):before{background:linear-gradient(145deg,#312e29,#0a0a0a 65%,#413c33)}
+.card .label{position:absolute;bottom:20px;left:20px;right:20px;z-index:1;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.work-title{grid-column:span 12;margin-top:30px;margin-bottom:0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8f8b84}
+.card:nth-child(1){grid-column:span 7;height:560px}
+.card:nth-child(2){grid-column:span 5;height:560px}
+.card:nth-child(3){grid-column:span 5;height:440px}
+.card:nth-child(4){grid-column:span 7;height:440px}
+.card:nth-child(5){grid-column:span 7;height:500px}
+.card:nth-child(6){grid-column:span 5;height:500px}
+.booking{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}
+.booking h2{max-width:700px}
+.contact-box{border-top:1px solid var(--line);padding-top:20px}
+.contact-row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:14px}
+.contact-row span:first-child{color:#817d76;text-transform:uppercase;font-size:10px;letter-spacing:.16em}
+footer{padding:28px 0 45px;color:#77736c;font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+@media(max-width:800px){
+ header{padding:16px 0}nav{gap:12px;font-size:9px}.container{width:min(calc(100% - 28px),var(--max))}
+ .hero{min-height:88vh;padding-bottom:50px}.section-head,.booking{grid-template-columns:1fr;gap:24px}
+ section{padding:80px 0}.grid{gap:9px}.card:nth-child(n){grid-column:span 12;height:390px}
+ .hero p{font-size:14px}.contact-row{align-items:flex-start;flex-direction:column;gap:5px}
+ footer{gap:20px;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">Lelouch Visual</a>
+    <nav>
+      <a href="#about">About</a><a href="#work">Work</a><a href="#contact">Booking</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-content">
+    <div class="kicker">Photography · Events · Street · Motion</div>
+    <h1>Stories<br>in motion.</h1>
+    <p>Quietly present. Always ready. Lelouch Visual documents real moments with a cinematic, street-inspired eye.</p>
+    <a class="cta" href="#contact">Book a shoot</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">01 — About</div>
+      <div class="about-copy">I approach events with a street photographer's eye—staying low-profile, anticipating fast motion, and capturing moments as they naturally unfold.</div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">02 — Selected work</div>
+      <h2>Unscripted<br>moments.</h2>
+    </div>
+
+    <div class="grid">
+      <div class="work-title">Events &amp; Live</div>
+      <div class="card"><div class="label"><span>Events &amp; Live</span><span>01</span></div></div>
+      <div class="card"><div class="label"><span>Events &amp; Live</span><span>02</span></div></div>
+
+      <div class="work-title">Street &amp; Motion</div>
+      <div class="card"><div class="label"><span>Street &amp; Motion</span><span>03</span></div></div>
+      <div class="card"><div class="label"><span>Street &amp; Motion</span><span>04</span></div></div>
+
+      <div class="work-title">Details &amp; Stills</div>
+      <div class="card"><div class="label"><span>Details &amp; Stills</span><span>05</span></div></div>
+      <div class="card"><div class="label"><span>Details &amp; Stills</span><span>06</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container booking">
+    <div>
+      <div class="eyebrow">03 — Contact / Booking</div>
+      <h2>Let's make<br>something real.</h2>
+    </div>
+    <div class="contact-box">
+      <div class="contact-row"><span>Phone</span><a href="tel:09393959067">0939 395 9067</a></div>
+      <div class="contact-row"><span>Instagram</span><a href="https://www.instagram.com/lelouchvisuals?stkn=MWR1aHF6bTczdTQwMQ==" target="_blank" rel="noopener">@lelouchvisuals ↗</a></div>
+      <a class="cta" href="https://www.instagram.com/lelouchvisuals?stkn=MWR1aHF6bTczdTQwMQ==" target="_blank" rel="noopener">Message on Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="container">
+  <span>© 2026 Lelouch Visual</span><span>Photography with a street eye.</span>
+</footer>
+</body>
+</html>
